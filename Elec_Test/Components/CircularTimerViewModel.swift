@@ -42,27 +42,19 @@ class CircularTimerViewModel: ObservableObject {
 
         timer = Timer.publish(every: timeStep, on: .main, in: .common).autoconnect()
 
-        Timer.publish(every: timeStep, on: .main, in: .default)
-            .autoconnect()
+        cancellable = timer
             .receive(on: DispatchQueue.main)
-            .compactMap { [weak self] _ in
-
-                guard let self = self
-                else { return 0 }
-
-                if self.progress >= 1.0 || self.timerInterval <= 0 {
-
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                if progress >= 1.0 || timerInterval <= 0 {
                     self.cancellable?.cancel()
-                    return 1.0
+                    self.progress = 0
                 } else {
-
-                    self.timerInterval -= self.timeStep
                     print("progress \(self.progress)")
-                    return self.progress - self.stepProgress
+                    self.timerInterval -= self.timeStep
+                    self.progress += self.stepProgress
                 }
             }
-            .removeDuplicates()
-            .assign(to: &$progress)
     }
 
     func textFromTimeInterval() -> String {
@@ -80,9 +72,7 @@ class CircularTimerViewModel: ObservableObject {
         if hours != 0 {
             var text = hoursString(hours: hours)
             if minutes != 0 {
-                text = " ";
-                minutesString(minutes: minutes)
-
+                text += " \(minutesString(minutes: minutes))"
             }
             return text
         } else if minutes != 0 {
