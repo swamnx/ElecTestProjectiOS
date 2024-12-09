@@ -28,7 +28,7 @@ import Combine
 
 struct CircularTimer: View {
 
-    @ObservedObject var viewModel: CircularTimerViewModel
+    @StateObject var viewModel: CircularTimerViewModel
     private let strokeWidth = CGFloat(8)
 
     init(time: CircularTimerViewModel.Time, progress: CGFloat) {
@@ -37,8 +37,9 @@ struct CircularTimer: View {
     }
 
     init(interval: TimeInterval, progress: CGFloat) {
-
-        self._viewModel = StateObject(wrappedValue: CircularTimerViewModel(interval: interval, progress: progress))
+        self._viewModel = StateObject(
+            wrappedValue: CircularTimerViewModel(interval: interval, progress: progress)
+        )
     }
 
     var body: some View {
@@ -47,20 +48,22 @@ struct CircularTimer: View {
 
             VStack(spacing: 16) {
                 ZStack {
-
                     Circle()
                         .stroke(lineWidth: strokeWidth)
-                        .foregroundColor(Color(0xFF323333 as! CGColor))
-
+                        .foregroundColor(Color(hex: 0xFF323333))
+                    // TODO: understand idea
                     Circle()
-                        .trim(from: 0, to: (1.0,  viewModel.progress))
+                        //.trim(from: 0, to: (1.0,  viewModel.progress))
+                        .trim(from: 0, to: viewModel.progress)
                         .stroke(style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round, lineJoin: .round))
-                        .foregroundColor(Color(0xFF4f758b as! CGColor))
+                        .foregroundColor(Color(hex: 0xFF4f758b))
 
+                    // TODO: understand idea
                     Circle()
-                        .trim(from: 0, to: min((1.0,  viewModel.progress), 0.001))
+                        //.trim(from: 0, to: min((1.0,  viewModel.progress), 0.001))
+                        .trim(from: 0, to: viewModel.progress)
                         .stroke(style: StrokeStyle(lineWidth: strokeWidth, lineCap: .square, lineJoin: .round))
-                        .foregroundColor(Color(0xFF4f758b as! CGColor))
+                        .foregroundColor(Color(hex: 0xFF4f758b))
                 }
                 .frame(width: proxy.size.width * 0.7, alignment: .center)
                 .rotationEffect(.degrees(90))

@@ -20,7 +20,7 @@ class CircularTimerViewModel: ObservableObject {
         let seconds: Int
 
         var interval: TimeInterval {
-            TimeInterval((hours * 60 * 60)  (minutes * 60),  seconds)
+            TimeInterval((hours * 60 * 60) + (minutes * 60) + seconds)
         }
     }
 
@@ -58,7 +58,7 @@ class CircularTimerViewModel: ObservableObject {
 
                     self.timerInterval -= self.timeStep
                     print("progress \(self.progress)")
-                    return self.progress  self.stepProgress
+                    return self.progress - self.stepProgress
                 }
             }
             .removeDuplicates()
@@ -93,18 +93,26 @@ class CircularTimerViewModel: ObservableObject {
     }
 
     private func hoursString(hours: Int) -> String {
-        languageService.getResourceString(resourceKey: StringKey().timerHours, params: [hours.toString].toKotlin())
+        return "hours: \(hours)"
+        // TODO: use KMM?
+        //languageService.getResourceString(resourceKey: StringKey().timerHours, params: [hours.toString].toKotlin())
     }
 
     private func minutesString(minutes: Int) -> String {
-        languageService.getResourceString(resourceKey: StringKey().timerMinutes, params: [minutes.toString].toKotlin())
+        return "minutes: \(minutes)"
+        // TODO: use KMM?
+        //languageService.getResourceString(resourceKey: StringKey().timerMinutes, params: [minutes.toString].toKotlin())
     }
 
     private func shortMinutesString(minutes: Int) -> String {
-        languageService.getResourceString(resourceKey: StringKey().timeMinutesShort, params: [minutes.toString].toKotlin())
+        return "short minutes: \(minutes)"
+        // TODO: use KMM?
+        //languageService.getResourceString(resourceKey: StringKey().timeMinutesShort, params: [minutes.toString].toKotlin())
     }
 
     private func shortSecondsString(seconds: Int) -> String {
-        languageService.getResourceString(resourceKey: StringKey().timeSecondsShort, params: [seconds.toString].toKotlin()).trimmingCharacters(in: .whitespaces)
+        return "shord seconds: \(seconds)"
+        // TODO: use KMM?
+        //languageService.getResourceString(resourceKey: StringKey().timeSecondsShort, params: [seconds.toString].toKotlin()).trimmingCharacters(in: .whitespaces)
     }
 }
