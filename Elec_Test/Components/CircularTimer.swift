@@ -53,7 +53,6 @@ struct CircularTimer: View {
                         .foregroundColor(Color(hex: 0xFF323333))
                     Circle()
                         .trim(from: 0, to: min(1.0,  viewModel.progress))
-                        .trim(from: 0, to: viewModel.progress)
                         .stroke(style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color(hex: 0xFF4f758b))
 
