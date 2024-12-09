@@ -46,22 +46,19 @@ struct CircularTimer: View {
 
         GeometryReader { proxy in
 
-            VStack(spacing: 16) {
+            VStack(alignment: .center, spacing: 16) {
                 ZStack {
                     Circle()
                         .stroke(lineWidth: strokeWidth)
                         .foregroundColor(Color(hex: 0xFF323333))
-                    // TODO: understand idea
                     Circle()
-                        //.trim(from: 0, to: (1.0,  viewModel.progress))
+                        .trim(from: 0, to: min(1.0,  viewModel.progress))
                         .trim(from: 0, to: viewModel.progress)
                         .stroke(style: StrokeStyle(lineWidth: strokeWidth, lineCap: .round, lineJoin: .round))
                         .foregroundColor(Color(hex: 0xFF4f758b))
 
-                    // TODO: understand idea
                     Circle()
-                        //.trim(from: 0, to: min((1.0,  viewModel.progress), 0.001))
-                        .trim(from: 0, to: viewModel.progress)
+                        .trim(from: 0, to: min(min(1.0,  viewModel.progress), 0.001))
                         .stroke(style: StrokeStyle(lineWidth: strokeWidth, lineCap: .square, lineJoin: .round))
                         .foregroundColor(Color(hex: 0xFF4f758b))
                 }
@@ -76,15 +73,7 @@ struct CircularTimer: View {
                 )
 
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-    }
-}
-
-struct CircularTimer_Previews: PreviewProvider {
-
-    static var previews: some View {
-
-        CircularTimer(time: CircularTimerViewModel.Time(hours: 0, minutes: 0, seconds: 30),
-                      progress: 0.0)
     }
 }

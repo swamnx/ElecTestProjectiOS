@@ -9,24 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
 
-    //TODO: maybe change to something more reusable
-    @State var progress: Float = 1.0
-    @State var text = "Test"
-
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            CircularProgressBar(progress: $progress, text: $text)
+        VStack(alignment: .center, spacing: 16) {
+            Text("Test")
+            CircularTimer(interval: 5, progress: 0)
+                .frame(width: 200, height: 200)
+            Spacer()
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-}
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }
