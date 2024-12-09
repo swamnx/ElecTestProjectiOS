@@ -13,17 +13,6 @@ typealias ProgressTimer = Publishers.Autoconnect<Timer.TimerPublisher>
 
 class CircularTimerViewModel: ObservableObject {
 
-    struct Time {
-
-        let hours: Int
-        let minutes: Int
-        let seconds: Int
-
-        var interval: TimeInterval {
-            TimeInterval((hours * 60 * 60) + (minutes * 60) + seconds)
-        }
-    }
-
     @Published var progress: CGFloat = 0
     @Published var timerInterval: TimeInterval
     @Published var textFromTimeInterval: String = ""

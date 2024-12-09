@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C60A39C92D0711220013A3F7 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60A39C82D0711220013A3F7 /* Color+Extensions.swift */; };
 		E8244E44290B586100C7B1EA /* Elec_TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E43290B586100C7B1EA /* Elec_TestApp.swift */; };
 		E8244E46290B586100C7B1EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E45290B586100C7B1EA /* ContentView.swift */; };
-		E8244E48290B586400C7B1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8244E47290B586400C7B1EA /* Assets.xcassets */; };
 		E8244E4C290B586400C7B1EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8244E4B290B586400C7B1EA /* Preview Assets.xcassets */; };
 		E8244E56290B586400C7B1EA /* Elec_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E55290B586400C7B1EA /* Elec_TestTests.swift */; };
 		E8244E60290B586400C7B1EA /* Elec_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E5F290B586400C7B1EA /* Elec_TestUITests.swift */; };
@@ -18,7 +17,6 @@
 		E8244E70290B59BF00C7B1EA /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E6F290B59BF00C7B1EA /* CircularProgressBar.swift */; };
 		E8244E72290B5A3100C7B1EA /* CircularTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E71290B5A3100C7B1EA /* CircularTimer.swift */; };
 		E8244E74290B5A8800C7B1EA /* CircularTimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E73290B5A8800C7B1EA /* CircularTimerViewModel.swift */; };
-		E8244E76290B5AB700C7B1EA /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8244E75290B5AB700C7B1EA /* Int+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +38,10 @@
 
 /* Begin PBXFileReference section */
 		C60A39C82D0711220013A3F7 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		C60A39DA2D074F770013A3F7 /* Elec-Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Elec-Test-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E8244E40290B586100C7B1EA /* Elec_Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elec_Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8244E43290B586100C7B1EA /* Elec_TestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elec_TestApp.swift; sourceTree = "<group>"; };
 		E8244E45290B586100C7B1EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E8244E47290B586400C7B1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8244E49290B586400C7B1EA /* Elec_Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Elec_Test.entitlements; sourceTree = "<group>"; };
 		E8244E4B290B586400C7B1EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8244E51290B586400C7B1EA /* Elec_TestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Elec_TestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,8 +52,11 @@
 		E8244E6F290B59BF00C7B1EA /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		E8244E71290B5A3100C7B1EA /* CircularTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTimer.swift; sourceTree = "<group>"; };
 		E8244E73290B5A8800C7B1EA /* CircularTimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTimerViewModel.swift; sourceTree = "<group>"; };
-		E8244E75290B5AB700C7B1EA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C60A39CF2D0748C90013A3F7 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E8244E3D290B586100C7B1EA /* Frameworks */ = {
@@ -105,10 +106,11 @@
 		E8244E42290B586100C7B1EA /* Elec_Test */ = {
 			isa = PBXGroup;
 			children = (
+				C60A39DA2D074F770013A3F7 /* Elec-Test-Info.plist */,
+				C60A39CF2D0748C90013A3F7 /* Resources */,
 				E8244E6E290B596300C7B1EA /* Components */,
 				E8244E43290B586100C7B1EA /* Elec_TestApp.swift */,
 				E8244E45290B586100C7B1EA /* ContentView.swift */,
-				E8244E47290B586400C7B1EA /* Assets.xcassets */,
 				E8244E49290B586400C7B1EA /* Elec_Test.entitlements */,
 				E8244E4A290B586400C7B1EA /* Preview Content */,
 			);
@@ -146,7 +148,6 @@
 				E8244E6F290B59BF00C7B1EA /* CircularProgressBar.swift */,
 				E8244E71290B5A3100C7B1EA /* CircularTimer.swift */,
 				E8244E73290B5A8800C7B1EA /* CircularTimerViewModel.swift */,
-				E8244E75290B5AB700C7B1EA /* Int+Extensions.swift */,
 				C60A39C82D0711220013A3F7 /* Color+Extensions.swift */,
 			);
 			path = Components;
@@ -166,6 +167,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C60A39CF2D0748C90013A3F7 /* Resources */,
 			);
 			name = Elec_Test;
 			productName = Elec_Test;
@@ -257,7 +261,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8244E4C290B586400C7B1EA /* Preview Assets.xcassets in Resources */,
-				E8244E48290B586400C7B1EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +289,6 @@
 				E8244E72290B5A3100C7B1EA /* CircularTimer.swift in Sources */,
 				C60A39C92D0711220013A3F7 /* Color+Extensions.swift in Sources */,
 				E8244E46290B586100C7B1EA /* ContentView.swift in Sources */,
-				E8244E76290B5AB700C7B1EA /* Int+Extensions.swift in Sources */,
 				E8244E44290B586100C7B1EA /* Elec_TestApp.swift in Sources */,
 				E8244E70290B59BF00C7B1EA /* CircularProgressBar.swift in Sources */,
 			);
@@ -447,6 +449,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Elec-Test-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -485,6 +488,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Elec-Test-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
