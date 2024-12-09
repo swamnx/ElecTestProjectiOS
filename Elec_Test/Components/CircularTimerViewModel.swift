@@ -26,6 +26,7 @@ class CircularTimerViewModel: ObservableObject {
 
     @Published var progress: CGFloat = 0
     @Published var timerInterval: TimeInterval
+    @Published var textFromTimeInterval: String = ""
 
     let timer: ProgressTimer
     private let timeStep = 0.25
@@ -54,17 +55,18 @@ class CircularTimerViewModel: ObservableObject {
                     self.timerInterval -= self.timeStep
                     self.progress += self.stepProgress
                 }
+                updateTextFromTimeInterval()
             }
     }
 
-    func textFromTimeInterval() -> String {
+    func updateTextFromTimeInterval() {
 
         let time = Int(timerInterval)
         let seconds = time % 60
         let minutes = (time / 60) % 60
         let hours = (time / 3_600)
 
-        return timeStringFrom(hours: hours, minutes: minutes, seconds: seconds)
+        textFromTimeInterval = timeStringFrom(hours: hours, minutes: minutes, seconds: seconds)
     }
 
     private func timeStringFrom(hours: Int = 0, minutes: Int = 0, seconds: Int) -> String {
